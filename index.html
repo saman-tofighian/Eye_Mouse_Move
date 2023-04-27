@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .eye{
+            width: 110px;
+            height: 70px;
+            background-color: #fcd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        span{
+            width: 18px;
+            height: 18px;
+            background: #fff;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body onmousemove="saman(event)">
+    <div class="box">
+        <div class="eye">
+            <span></span>
+        </div>
+        <div class="eye">
+            <span></span>
+        </div>
+    </div>
+</body>
+<script>
+    function saman(event){
+        let x = ((event.clientX)/15)-50 
+        let y = ((event.clientY)/16)-27
+
+        document.querySelector('.box>.eye:nth-of-type(1)>span').style.transform = 'translateX('+x+'px)translateY('+y+'px)'
+
+        document.querySelector('.box>.eye:nth-of-type(2)>span').style.transform = 'translateX('+x+'px)translateY('+y+'px)'
+    }
+</script>
+</html>
